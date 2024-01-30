@@ -1,0 +1,570 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    transition: 3s;
+}
+
+.container_global {
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,  rgba(17, 17, 26, 0.1) 0px 8px 24px , rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    background: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.dots {
+    position: absolute;
+    top: 30px;
+    left: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.dots .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 4px;
+}
+
+.dots .dot:nth-child(1) {
+    background: #EF476F;
+}
+
+.dots .dot:nth-child(2) {
+    background: #FFD166;
+}
+
+.dots .dot:nth-child(3) {
+    background: #06D6A0;
+}
+
+.container_global .conteneur {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.container_global .conteneur .sidebar {
+    width: 7%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    transition: 0.5s ease-in-out;
+}
+
+.container_global .conteneur .sidebar.active {
+    width: 31%;
+    transition: 0.5s;
+}
+
+
+.container_global .conteneur .content {
+    width: calc(100% - 7%);
+    height: 715px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 50px 20px 0px 0px;
+}
+
+.container_global .conteneur .content .text_box {
+    padding: 0 100px;
+}
+
+.container_global .conteneur .content .text_box h1 {
+    color: #222;
+    font-size: 25px;
+}
+
+.container_global .conteneur .content .text_box h2 {
+    color: #EF476F;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 20px 0;
+    padding-bottom: 20px;
+}
+
+.container_global .conteneur .content .management{
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.container_global .conteneur .content .management h3{
+    color:rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    width: 100%;
+}
+
+.container_global .conteneur .content .management h3 span {
+    color: #06D6A0;
+}
+
+.information {
+    width: 330px;
+    height: 100%;
+    background: #ffe66d;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.information .information_header {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.information .information_header .profil {
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+    align-items: center;
+    color: #000;
+    font-size: 20px;
+}
+
+.information .information_header .profil i {
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.5 ease;
+}
+
+.information .information_header .profil i:hover {
+    color: #06D6A0;
+}
+
+.information .information_header .profil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 15px;
+}
+
+.information .information_content {
+    height: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+}
+
+.information .information_content h5 {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 18px;
+    text-align: left;
+}
+
+.information .information_content h6 {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.performances {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 40px 0;
+}
+
+.range_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.range_item p {
+    font-size: 15px;
+    color: #000;
+}
+
+.range_item .range {
+    width: 200px;
+    height: 15px;
+    background: rgba(239, 77, 111, 0.2);
+    border-radius: 10px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.range_item .range.yellow {
+    background: rgba(255, 209, 112, 0.2);
+}
+
+.range_item .range.green {
+    background: rgba(6, 214, 160, 0.2);
+}
+
+.range::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: #EF476F;
+    border-radius: 10px;
+}
+
+.range.yellow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: #FFD166;
+    border-radius: 10px;
+}
+
+.range.green::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background: #06d806;
+    border-radius: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.stats .card {
+    width: 110px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats .card h4 {
+    font-size: 20px;
+    color: #000;
+}
+
+.stats .card p {
+    font-size: 12px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+
+/* Tsisy css ny calendrier */
+
+/* Scroll css */
+::-webkit-scrollbar {
+    width: 7px;
+    color: #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    min-height: 100px;
+    cursor: pointer;
+}
+
+
+.scrollbox {
+    overflow: auto;
+    visibility: hidden;
+}
+
+
+.scrollbox-inner,
+.scrollbox:hover {
+    visibility: visible;
+    text-align: justify;
+}
+
+
+.scrollbox-inner p{
+    font-size: 16px;
+    color: #fff;
+}
+
+.ombre {
+    box-shadow: inset 0 0 10px #888;
+}
+
+
+/* Collapse Navigation */
+
+.navigation {
+    position: fixed;
+    margin-top: 174px;
+    margin-left: 5px;
+    inset: 1px;
+    background: #ffe66d;
+    width: 69px;
+    height: 500px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 230px;
+}
+
+.toggle {
+    position: absolute;
+    bottom: 50px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #888;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 3px;
+    border-radius: 3px;
+    background: yellow;
+    transform: translateY(-5px);
+    transition: 1s;
+}
+
+.toggle::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 3px;
+    border-radius: 3px;
+    background: yellow;
+    transform: translateY(5px);
+    transition: 1s;
+}
+
+.navigation.active .toggle::before {
+    transform: translateY(0px) rotate(-405deg);
+}
+
+.navigation.active .toggle::after {
+    transform: translateY(0px) rotate(225deg);
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 100px;
+}
+
+.navigation ul li {
+    transition: 0.1s;
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    top: 20px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.navigation ul li:hover {
+    background: #fff;
+    height: 40px;
+    transition: .1s;
+}
+
+.navigation ul li:not(:first-child):hover::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border-bottom-right-radius: 20px;
+    box-shadow: inset 0 0 0 10px yellow;
+    
+}
+
+.navigation ul li:not(:first-child):hover::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: inset 0 0 0 10px yellow;}
+
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li:hover a {
+    color: #222;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation ul li a .icon {
+    font-size: 20px;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    height: 25px;
+    padding: 0 15px;
+    text-align: start;
+    align-items: center;
+    white-space: nowrap;
+    display: flex;
+    width: 100%;
+}
+
+/* Map */
+
+.map {
+    background: #EF476F;
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.mapReservation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.taxiNow {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #FFD166 solid 2px;
+    box-shadow: 0 0 10px #999;
+}
+
+.payement {
+    width: 100%;
+    height: 400px;
+    background: #FFD166;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+
+/* Pulse CSS */
+.pulse {
+    height: 150px;
+    width: 150px;
+    background: linear-gradient(#8a82fb, #407ed7);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 50px;
+    color: #ffffff;
+}
+
+.pulse::before,
+.pulse::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #8a82fb;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.pulse::before {
+    animation: pulse 2s ease-out infinite;
+}
+
+.pulse::after {
+    animation: pulse 2s 1s ease-out infinite;
+}
+
+@keyframes pulse {
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* DROP DOWN */
+.navigation ul li select,
+.navigation ul li select option {
+    border: transparent;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 40px;
+    padding-right: -10px;
+}
